@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dipankar - Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(15, 15, 95);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 74px;
+            background-color: rgb(9, 9, 86);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style-type: none;
+            margin: 0 23px;
+
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+
+        }
+
+        nav ul li a:hover {
+            color: rgb(101, 101, 189);
+            font-size: 1.02rem;
+        }
+
+        main hr {
+            border: 0;
+            background-color: rgb(173, 173, 207);
+            height: 1.2px;
+            margin: 60px 84px;
+        }
+
+        .left {
+            font-size: 1.5rem;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            margin: 120px 0;
+        }
+
+        .firstSection>div {
+            width: 30%;
+        }
+
+        .leftSection {
+            font-size: 2.5rem;
+            margin: 70px 0;
+        }
+
+        .leftSection .btn {
+            padding: 12px;
+            background: #1e2167;
+            color: white;
+            border: 2px solid white;
+            border-radius: 6px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .leftSection .buttons {
+            padding: 50px 0;
+        }
+
+        .rightSection img {
+            width: 400px;
+            border-radius: 50%;
+        }
+
+        .purple {
+            color: rgb(150, 70, 224);
+        }
+
+        .text-grey {
+            color: gray
+        }
+
+        #element {
+            color: rgb(150, 70, 224);
+        }
+
+        .secondSection {
+            max-width: 80vw;
+            margin: auto;
+            height: 80vh;
+        }
+
+        .secondSection h1 {
+            font-size: 1.9rem;
+        }
+
+        .secondSection .box {
+            background-color: white;
+            width: 80vw;
+            height: 2px;
+            margin: 56px 0;
+            display: flex;
+        }
+
+        .secondSection .vertical {
+            height: 93px;
+            width: 1px;
+            background-color: white;
+            margin: 0 120px;
+
+        }
+
+        .image-top {
+            width: 23px;
+            position: relative;
+            top: -32px;
+            left: -9px;
+        }
+
+        .vertical-title {
+            position: relative;
+            top: 75px;
+            width: 150px;
+            left: -45px;
+            font-size: 13px;
+        }
+
+        .vertical-desc {
+            position: relative;
+            top: 77px;
+            font-size: 11px;
+            width: 150px;
+            color: gray;
+            left: -43px;
+        }
+
+        footer {
+            background-color: rgb(8, 8, 45);
+
+        }
+
+        .footer {
+            padding: 23px 122px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer>div {
+            width: 223px;
+        }
+
+        footer .footer-text-centre {
+            color: gray;
+            text-align: center;
+            padding: 12px 0;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            color: black;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Dipankar's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li>><a href="/">
+                            HOME
+                        </a></li>
+                    <li>>
+                        <a id="aboutLink" href="#">ABOUT</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">PROJECTS</a>
+                        <div class="dropdown-content">
+                            <a href="https://github.com/dipankardatta/final-chat-app">Group Chat Application</a>
+                            <a href="https://github.com/dipankardatta/final-expense-tracker-v2">Expense Tracker</a>
+                            <a href="https://github.com/dipankardatta/Final-ecommerce">E-commerce Website</a>
+                            <a href="https://github.com/dipankardatta/Create-3D-Animations-Using-HTML-CSS-JS">3d
+                                Animations</a>
+                        </div>
+                    </li>
+
+                    <li>>
+                        <a href="https://www.linkedin.com/in/dipankar-datta-backend-engineer/">
+                            CONTACT ME
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                Hey, My name is <span class="purple">Dipankar</span>
+                <div>and I am a passionate</div>
+                <span id="element"></span>
+                <div class="buttons">
+                    <button class="btn" id="downloadResume">Download Resume</button>
+                    <button class="btn" id="visitGithub">Visit Github</button>
+                </div>
+            </div>
+            <div class="rightSection">
+                <img src="unnamed.jpg" alt="">
+            </div>
+        </section>
+        <hr>
+        <section class="secondSection">
+            <span class="text-grey">What I have done so far</span>
+            <h1>Past Experience</h1>
+            <div class="box">
+                <div class="vertical">
+                    <img class="image-top" src="Daco_6122373.png" alt="">
+                    <div class="vertical-title">
+                        BSc in Hotel Management (2017 - 2020)
+                    </div>
+                    <div class="vertical-desc">
+                        Hotel Management from IHM kolkata.
+                        Specialised in Guest service and Continental cooking
+                        with applied science and nutrition.
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="Daco_6122373.png" alt="">
+                    <div class="vertical-title">
+                        Internship in Hyatt Regency Kolkata (2018)
+                    </div>
+                    <div class="vertical-desc">
+                        Actively contributed to guest satisfaction,reservations, and promptly addressing
+                        guest inquiries, showcasing my strong communication and problem-solving skills.
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="Daco_6122373.png" alt="">
+                    <div class="vertical-title">
+                        MBA in Finance and HR (2020 - 2022)
+                    </div>
+                    <div class="vertical-desc">
+                        My MBA in Finance equipped me with a robust skill set in financial analysis,
+                        strategic planning, and risk management.
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="Daco_6122373.png" alt="">
+                    <div class="vertical-title">
+                        Amazon (2022)
+                    </div>
+                    <div class="vertical-desc">
+                        Meticulously analyze financial transactions, assess potential risks, and implement mitigation
+                        strategies to ensure
+                        secure and fraud-resistant operations.
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="Daco_6122373.png" alt="">
+                    <div class="vertical-title">
+                        Sharpener(2023 - present)
+                    </div>
+                    <div class="vertical-desc">
+                        Enrolled in an innovative ed tech platform, I'm immersed in a comprehensive web development
+                        curriculum that combines
+                        interactive lessons, hands-on projects, and real-world coding challenge
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="footer-first">
+                <h3>Dipankar's Developer Portfolio</h3>
+            </div>
+            <div class="footer-second">
+
+                <li>Home</li>
+
+            </div>
+            <div class="footer-third">
+                <li>About</li>
+            </div>
+            <div class="footer-fourth">
+                <li>Contact</li>
+            </div>
+
+        </div>
+        <div class="footer-text-centre">
+            Copyright &#169; www.linkedin.com/in/dipankar-datta-backend-engineer || All rights Reserved
+        </div>
+    </footer>
+
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>
+            <div>
+                Hello! I'm Dipankar Datta, a passionate Web Developer enthusiast with a strong drive for innovative
+                solutions. Armed with a
+                solid foundation in <b>JavaScript,NodeJs,SQL,TypeScript,MongoDB, MVC</b> etc, I thrive on tackling
+                complex challenges and turning them
+                into opportunities for
+                growth.
+            </div>
+            <div>My journey has led me to embrace <b>Analytical thinking and Detail oriented,</b> and I am
+                committed to
+                continuous learning to stay at the
+                forefront of industry trends. When I'm not immersed in developing, you can find me <b>beatboxing,playing
+                    football, reading a novel and learning a new skill</b> where I find
+                inspiration and balance. I'm excited to contribute my expertise and enthusiasm to projects that make a
+                meaningful
+                impact.</div>
+            <div><b>Let's Connect</b></div>
+
+            </p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'Backend Engineer', 'Software Developer'],
+            typeSpeed: 50,
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const dropdown = document.querySelector(".dropdown");
+            const downloadResumeButton = document.getElementById("downloadResume");
+            const visitGithubButton = document.getElementById("visitGithub");
+            const aboutLink = document.getElementById("aboutLink");
+            const aboutModal = document.getElementById("aboutModal");
+            const closeBtn = document.querySelector(".close");
+
+            dropdown.addEventListener("mouseenter", function () {
+                const dropdownContent = this.querySelector(".dropdown-content");
+                dropdownContent.style.display = "block";
+            });
+
+            dropdown.addEventListener("mouseleave", function () {
+                const dropdownContent = this.querySelector(".dropdown-content");
+                dropdownContent.style.display = "none";
+            });
+
+            downloadResumeButton.addEventListener("click", function () {
+                window.open("https://drive.google.com/file/d/11-_tcOPgDdI0ZwOvlQQDuNAtSusHDiNm/view?usp=drive_link", "_blank");
+            });
+
+            visitGithubButton.addEventListener("click", function () {
+                window.open("https://github.com/dipankardatta", "_blank");
+            });
+
+            aboutLink.addEventListener("click", function () {
+                aboutModal.style.display = "block";
+            });
+
+            closeBtn.addEventListener("click", function () {
+                aboutModal.style.display = "none";
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target === aboutModal) {
+                    aboutModal.style.display = "none";
+                }
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
